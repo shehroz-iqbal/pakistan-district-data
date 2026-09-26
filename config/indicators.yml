@@ -1,0 +1,368 @@
+# Indicator catalogue: the single definition of every published number.
+#
+# kind:
+#   count       value = sum(column)
+#   ratio       value = multiplier * sum(numerator) / sum(denominator)
+#   growth      value = 100 * ((sum(numerator) / sum(denominator)) ^ (1 / years) - 1)
+#   difference  value = indicator minuend - indicator subtrahend (same place)
+#
+# Province and Pakistan values are computed from summed numerators and
+# denominators, never by averaging district rates.
+# direction: "higher_better", "lower_better" or "neutral" (used only for colour).
+
+- id: population
+  label: "Population, 2023"
+  theme: Population
+  kind: count
+  column: pop_total
+  unit: people
+  decimals: 0
+  direction: neutral
+  source: "Table 1"
+  definition: "Persons enumerated in the 2023 census (headline count)."
+
+- id: population_2017
+  label: "Population, 2017"
+  theme: Population
+  kind: count
+  column: pop_2017
+  unit: people
+  decimals: 0
+  direction: neutral
+  source: "Table 1"
+  definition: "2017 census population, as re-tabulated by PBS on 2023 district boundaries."
+
+- id: growth_rate
+  label: "Annual population growth, 2017-2023"
+  theme: Population
+  kind: growth
+  numerator: pop_total
+  denominator: pop_2017
+  years: 6
+  unit: "% per year"
+  decimals: 2
+  direction: neutral
+  source: "Table 1"
+  definition: "Compound annual growth between the 2017 and 2023 counts over a six-year interval."
+
+- id: area
+  label: "Area"
+  theme: Population
+  kind: count
+  column: area_km2
+  unit: "km²"
+  decimals: 0
+  direction: neutral
+  source: "Table 1"
+  definition: "Area reported by PBS."
+
+- id: density
+  label: "Population density"
+  theme: Population
+  kind: ratio
+  numerator: pop_total
+  denominator: area_km2
+  multiplier: 1
+  unit: "people per km²"
+  decimals: 0
+  direction: neutral
+  source: "Table 1"
+  definition: "Population divided by reported area."
+
+- id: urban_share
+  label: "Urban population share"
+  theme: Population
+  kind: ratio
+  numerator: pop_urban
+  denominator: pop_total
+  multiplier: 100
+  unit: "%"
+  decimals: 1
+  direction: neutral
+  source: "Table 1"
+  definition: "Share of the population living in areas PBS classifies as urban."
+
+- id: sex_ratio
+  label: "Sex ratio"
+  theme: Population
+  kind: ratio
+  numerator: pop_male
+  denominator: pop_female
+  multiplier: 100
+  unit: "males per 100 females"
+  decimals: 1
+  direction: neutral
+  source: "Table 1"
+  definition: "Males per 100 females."
+
+- id: household_size
+  label: "Persons per household"
+  theme: Population
+  kind: ratio
+  numerator: pop_total
+  denominator: households
+  multiplier: 1
+  unit: persons
+  decimals: 2
+  direction: neutral
+  source: "Tables 1 and 22"
+  definition: "Population divided by the number of households in Tables 22-25. PBS publishes 6.33 nationally but does not state its method in these tables, so expect small differences from PBS's figures."
+
+- id: literacy_rate
+  label: "Literacy rate (10+)"
+  theme: Education
+  kind: ratio
+  numerator: literate10_all
+  denominator: pop10_all
+  multiplier: 100
+  unit: "%"
+  decimals: 1
+  direction: higher_better
+  source: "Table 12"
+  definition: "Literate persons aged 10 and over as a share of all persons aged 10 and over."
+
+- id: literacy_rate_female
+  label: "Female literacy rate (10+)"
+  theme: Education
+  kind: ratio
+  numerator: literate10_female
+  denominator: pop10_female
+  multiplier: 100
+  unit: "%"
+  decimals: 1
+  direction: higher_better
+  source: "Table 12"
+  definition: "Literate women and girls aged 10 and over as a share of all women and girls aged 10 and over."
+
+- id: literacy_rate_male
+  label: "Male literacy rate (10+)"
+  theme: Education
+  kind: ratio
+  numerator: literate10_male
+  denominator: pop10_male
+  multiplier: 100
+  unit: "%"
+  decimals: 1
+  direction: higher_better
+  source: "Table 12"
+  definition: "Literate men and boys aged 10 and over as a share of all men and boys aged 10 and over."
+
+- id: literacy_gender_gap
+  label: "Literacy gender gap"
+  theme: Education
+  kind: difference
+  minuend: literacy_rate_male
+  subtrahend: literacy_rate_female
+  unit: "percentage points"
+  decimals: 1
+  direction: lower_better
+  source: "Table 12"
+  definition: "Male minus female literacy rate (10+). Positive means men are ahead."
+
+- id: out_of_school_rate
+  label: "Out-of-school children (5-16)"
+  theme: Education
+  kind: ratio
+  numerator: oosc_all
+  denominator: pop5_16_all
+  multiplier: 100
+  unit: "%"
+  decimals: 1
+  direction: lower_better
+  source: "Tables 12 and 13b"
+  definition: "Children aged 5-16 who never attended school or dropped out, as a share of all children aged 5-16."
+
+- id: out_of_school_rate_female
+  label: "Out-of-school girls (5-16)"
+  theme: Education
+  kind: ratio
+  numerator: oosc_female
+  denominator: pop5_16_female
+  multiplier: 100
+  unit: "%"
+  decimals: 1
+  direction: lower_better
+  source: "Tables 12 and 13b"
+  definition: "Girls aged 5-16 who never attended school or dropped out, as a share of all girls aged 5-16."
+
+- id: out_of_school_rate_male
+  label: "Out-of-school boys (5-16)"
+  theme: Education
+  kind: ratio
+  numerator: oosc_male
+  denominator: pop5_16_male
+  multiplier: 100
+  unit: "%"
+  decimals: 1
+  direction: lower_better
+  source: "Tables 12 and 13b"
+  definition: "Boys aged 5-16 who never attended school or dropped out, as a share of all boys aged 5-16."
+
+- id: disability_rate
+  label: "Persons with a disability"
+  theme: Population
+  kind: ratio
+  numerator: disability_all
+  denominator: pop_t16_all
+  multiplier: 100
+  unit: "%"
+  decimals: 1
+  direction: neutral
+  source: "Table 16"
+  definition: "Persons reported with a disability as a share of the population covered by Table 16."
+
+- id: electricity_lighting
+  label: "Households lit by grid electricity"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_light_electric
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: higher_better
+  source: "Table 22"
+  definition: "Households whose main source of lighting is electricity."
+
+- id: solar_lighting
+  label: "Households lit by solar"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_light_solar
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: neutral
+  source: "Table 22"
+  definition: "Households whose main source of lighting is solar."
+
+- id: gas_cooking
+  label: "Households cooking with piped gas"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_fuel_gas
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: neutral
+  source: "Table 22"
+  definition: "Households whose main cooking fuel is natural gas."
+
+- id: firewood_cooking
+  label: "Households cooking with firewood"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_fuel_firewood
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: lower_better
+  source: "Table 22"
+  definition: "Households whose main cooking fuel is firewood."
+
+- id: improved_water
+  label: "Improved drinking water"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_water_improved
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: higher_better
+  source: "Table 23"
+  definition: "Households whose main drinking-water source PBS classifies as improved."
+
+- id: water_on_premises
+  label: "Drinking water on premises"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_water_inside
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: higher_better
+  source: "Table 23"
+  definition: "Households whose drinking-water source is inside the dwelling or compound."
+
+- id: flush_toilet
+  label: "Households with a flush toilet"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_toilet_flush
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: higher_better
+  source: "Table 24"
+  definition: "Households with a flush toilet."
+
+- id: no_toilet
+  label: "Households with no toilet"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_toilet_none
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: lower_better
+  source: "Table 24"
+  definition: "Households with no toilet facility."
+
+- id: pakka_housing
+  label: "Pakka (permanent) housing"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_pakka
+  denominator: households_t20
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: higher_better
+  source: "Table 20"
+  definition: "Households living in pakka (fired brick or concrete) structures."
+
+- id: rented_housing
+  label: "Households renting"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_rented
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: neutral
+  source: "Table 25"
+  definition: "Households living in a rented dwelling."
+
+- id: one_room_housing
+  label: "Households in one room"
+  theme: Housing and services
+  kind: ratio
+  numerator: hh_one_room
+  denominator: households
+  multiplier: 100
+  unit: "% of households"
+  decimals: 1
+  direction: lower_better
+  source: "Table 25"
+  definition: "Households living in a dwelling with a single room."
+
+- id: female_owned_housing
+  label: "Dwellings owned by women"
+  theme: Housing and services
+  kind: ratio
+  numerator: owner_female
+  denominator: owner_any
+  multiplier: 100
+  unit: "% of private dwellings"
+  decimals: 1
+  direction: higher_better
+  source: "Table 25"
+  definition: "Share of privately held dwellings (owner-occupied, rented or rent-free) whose owner is a woman. Table 25 reports owner's sex for exactly these three tenure types."

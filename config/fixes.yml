@@ -1,0 +1,51 @@
+# Corrections applied to the raw census CSVs before anything else touches them.
+# Raw files stay untouched in data/raw; each fix is explicit, reasoned and counted.
+# The pipeline fails if a fix stops matching the number of rows it expects, so an
+# upstream correction can't silently double-apply or vanish.
+
+- id: F001
+  table: t01
+  province: sindh
+  match: {name_admin_unit: "TANDO AHYAR"}
+  set: {name_admin_unit: "TANDO ALLAHYAR", part_of_district: "TANDO ALLAHYAR"}
+  expected_rows: 3
+  reason: >
+    Table 1 spells Tando Allahyar as "TANDO AHYAR". Every other table (12, 13a, 16,
+    20-25) uses "TANDO ALLAHYAR", so without this the district drops out of every join.
+
+- id: F002
+  table: t01_all
+  province: sindh
+  match: {name_admin_unit: "TANDO AHYAR"}
+  set: {name_admin_unit: "TANDO ALLAHYAR"}
+  expected_rows: 6
+  reason: "Same misspelling in the tehsil-level version of Table 1 (district and taluka rows)."
+
+- id: F003
+  table: t01_all
+  province: sindh
+  match: {part_of_district: "TANDO AHYAR"}
+  set: {part_of_district: "TANDO ALLAHYAR"}
+  expected_rows: 12
+  reason: "Same misspelling in the parent-district column of the tehsil-level Table 1 (district row and its three talukas)."
+
+- id: F004
+  table: t01
+  province: sindh
+  match: {name_admin_unit: "TANDO MUHAMMAD KHAN", admin_unit: "DISTRICT", all_sexes: [272427, 158021, 114406]}
+  set: {admin_unit: "TEHSIL"}
+  expected_rows: 3
+  reason: >
+    The Tando Muhammad Khan taluka (263 km2, population 272,427) is labelled as a
+    second district row. Evidence: the district total 726,119 equals Bulri Shah Karim
+    (247,027) + Tando Ghulam Hyder (206,665) + this row (272,427); and before the fix
+    Sindh's districts sum to 272,427 more people and 263 km2 more area than the Sindh
+    province row. Relabelled as a tehsil, so it leaves the district table.
+
+- id: F005
+  table: t01_all
+  province: sindh
+  match: {name_admin_unit: "TANDO MUHAMMAD KHAN", admin_unit: "DISTRICT", all_sexes: [272427, 158021, 114406]}
+  set: {admin_unit: "TEHSIL"}
+  expected_rows: 3
+  reason: "Same mislabelled taluka rows in the tehsil-level version of Table 1."

@@ -1,0 +1,8 @@
+district_id,map_unit_id,map_unit_name,reason
+sd_karachi_central,sd_karachi,Karachi (7 districts),"Karachi's 2023 districts were redrawn below the level of the 2017-era town polygons (Karachi West comes out at 6% of its reported area), so the seven are drawn as one shape. Each district keeps its own row in the data."
+sd_karachi_east,sd_karachi,Karachi (7 districts),See sd_karachi_central.
+sd_karachi_south,sd_karachi,Karachi (7 districts),See sd_karachi_central.
+sd_karachi_west,sd_karachi,Karachi (7 districts),See sd_karachi_central.
+sd_keamari,sd_karachi,Karachi (7 districts),See sd_karachi_central.
+sd_korangi,sd_karachi,Karachi (7 districts),See sd_karachi_central.
+sd_malir,sd_karachi,Karachi (7 districts),See sd_karachi_central.
