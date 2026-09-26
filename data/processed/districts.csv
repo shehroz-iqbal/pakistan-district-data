@@ -1,0 +1,137 @@
+district_id,district_name,province_code,province_name,census_name,map_unit_id
+ba_awaran,Awaran,BA,Balochistan,AWARAN,ba_awaran
+ba_barkhan,Barkhan,BA,Balochistan,BARKHAN,ba_barkhan
+ba_chagai,Chagai,BA,Balochistan,CHAGAI,ba_chagai
+ba_chaman,Chaman,BA,Balochistan,CHAMAN,ba_chaman
+ba_dera_bugti,Dera Bugti,BA,Balochistan,DERA BUGTI,ba_dera_bugti
+ba_duki,Duki,BA,Balochistan,DUKI,ba_duki
+ba_gwadar,Gwadar,BA,Balochistan,GWADAR,ba_gwadar
+ba_harnai,Harnai,BA,Balochistan,HARNAI,ba_harnai
+ba_jaffarabad,Jaffarabad,BA,Balochistan,JAFFARABAD,ba_jaffarabad
+ba_jhal_magsi,Jhal Magsi,BA,Balochistan,JHAL MAGSI,ba_jhal_magsi
+ba_kachhi,Kachhi,BA,Balochistan,KACHHI,ba_kachhi
+ba_kalat,Kalat,BA,Balochistan,KALAT,ba_kalat
+ba_kech,Kech,BA,Balochistan,KECH,ba_kech
+ba_kharan,Kharan,BA,Balochistan,KHARAN,ba_kharan
+ba_khuzdar,Khuzdar,BA,Balochistan,KHUZDAR,ba_khuzdar
+ba_killa_abdullah,Killa Abdullah,BA,Balochistan,KILLA ABDULLAH,ba_killa_abdullah
+ba_killa_saifullah,Killa Saifullah,BA,Balochistan,KILLA SAIFULLAH,ba_killa_saifullah
+ba_kohlu,Kohlu,BA,Balochistan,KOHLU,ba_kohlu
+ba_lasbela,Lasbela,BA,Balochistan,LASBELA,ba_lasbela
+ba_loralai,Loralai,BA,Balochistan,LORALAI,ba_loralai
+ba_mastung,Mastung,BA,Balochistan,MASTUNG,ba_mastung
+ba_musakhel,Musakhel,BA,Balochistan,MUSAKHEL,ba_musakhel
+ba_nasirabad,Nasirabad,BA,Balochistan,NASIRABAD,ba_nasirabad
+ba_nushki,Nushki,BA,Balochistan,NUSHKI,ba_nushki
+ba_panjgur,Panjgur,BA,Balochistan,PANJGUR,ba_panjgur
+ba_pishin,Pishin,BA,Balochistan,PISHIN,ba_pishin
+ba_quetta,Quetta,BA,Balochistan,QUETTA,ba_quetta
+ba_sherani,Sherani,BA,Balochistan,SHERANI,ba_sherani
+ba_sibi,Sibi,BA,Balochistan,SIBI,ba_sibi
+ba_sohbatpur,Sohbatpur,BA,Balochistan,SOHBATPUR,ba_sohbatpur
+ba_surab,Surab,BA,Balochistan,SURAB,ba_surab
+ba_washuk,Washuk,BA,Balochistan,WASHUK,ba_washuk
+ba_zhob,Zhob,BA,Balochistan,ZHOB,ba_zhob
+ba_ziarat,Ziarat,BA,Balochistan,ZIARAT,ba_ziarat
+is_islamabad,Islamabad,IS,Islamabad Capital Territory,ISLAMABAD,is_islamabad
+kp_abbottabad,Abbottabad,KP,Khyber Pakhtunkhwa,ABBOTTABAD,kp_abbottabad
+kp_bajaur,Bajaur,KP,Khyber Pakhtunkhwa,BAJAUR,kp_bajaur
+kp_bannu,Bannu,KP,Khyber Pakhtunkhwa,BANNU,kp_bannu
+kp_batagram,Batagram,KP,Khyber Pakhtunkhwa,BATAGRAM,kp_batagram
+kp_buner,Buner,KP,Khyber Pakhtunkhwa,BUNER,kp_buner
+kp_charsadda,Charsadda,KP,Khyber Pakhtunkhwa,CHARSADDA,kp_charsadda
+kp_dera_ismail_khan,Dera Ismail Khan,KP,Khyber Pakhtunkhwa,DERA ISMAIL KHAN,kp_dera_ismail_khan
+kp_hangu,Hangu,KP,Khyber Pakhtunkhwa,HANGU,kp_hangu
+kp_haripur,Haripur,KP,Khyber Pakhtunkhwa,HARIPUR,kp_haripur
+kp_karak,Karak,KP,Khyber Pakhtunkhwa,KARAK,kp_karak
+kp_khyber,Khyber,KP,Khyber Pakhtunkhwa,KHYBER,kp_khyber
+kp_kohat,Kohat,KP,Khyber Pakhtunkhwa,KOHAT,kp_kohat
+kp_kolai_palas_kohistan,Kolai Palas Kohistan,KP,Khyber Pakhtunkhwa,KOLAI PALAS KOHISTAN,kp_kolai_palas_kohistan
+kp_kurram,Kurram,KP,Khyber Pakhtunkhwa,KURRAM,kp_kurram
+kp_lakki_marwat,Lakki Marwat,KP,Khyber Pakhtunkhwa,LAKKI MARWAT,kp_lakki_marwat
+kp_lower_chitral,Lower Chitral,KP,Khyber Pakhtunkhwa,LOWER CHITRAL,kp_lower_chitral
+kp_lower_dir,Lower Dir,KP,Khyber Pakhtunkhwa,LOWER DIR,kp_lower_dir
+kp_lower_kohistan,Lower Kohistan,KP,Khyber Pakhtunkhwa,LOWER KOHISTAN,kp_lower_kohistan
+kp_malakand,Malakand,KP,Khyber Pakhtunkhwa,MALAKAND,kp_malakand
+kp_mansehra,Mansehra,KP,Khyber Pakhtunkhwa,MANSEHRA,kp_mansehra
+kp_mardan,Mardan,KP,Khyber Pakhtunkhwa,MARDAN,kp_mardan
+kp_mohmand,Mohmand,KP,Khyber Pakhtunkhwa,MOHMAND,kp_mohmand
+kp_north_waziristan,North Waziristan,KP,Khyber Pakhtunkhwa,NORTH WAZIRISTAN,kp_north_waziristan
+kp_nowshera,Nowshera,KP,Khyber Pakhtunkhwa,NOWSHERA,kp_nowshera
+kp_orakzai,Orakzai,KP,Khyber Pakhtunkhwa,ORAKZAI,kp_orakzai
+kp_peshawar,Peshawar,KP,Khyber Pakhtunkhwa,PESHAWAR,kp_peshawar
+kp_shangla,Shangla,KP,Khyber Pakhtunkhwa,SHANGLA,kp_shangla
+kp_south_waziristan,South Waziristan,KP,Khyber Pakhtunkhwa,SOUTH WAZIRISTAN,kp_south_waziristan
+kp_swabi,Swabi,KP,Khyber Pakhtunkhwa,SWABI,kp_swabi
+kp_swat,Swat,KP,Khyber Pakhtunkhwa,SWAT,kp_swat
+kp_tank,Tank,KP,Khyber Pakhtunkhwa,TANK,kp_tank
+kp_torghar,Torghar,KP,Khyber Pakhtunkhwa,TORGHAR,kp_torghar
+kp_upper_chitral,Upper Chitral,KP,Khyber Pakhtunkhwa,UPPER CHITRAL,kp_upper_chitral
+kp_upper_dir,Upper Dir,KP,Khyber Pakhtunkhwa,UPPER DIR,kp_upper_dir
+kp_upper_kohistan,Upper Kohistan,KP,Khyber Pakhtunkhwa,UPPER KOHISTAN,kp_upper_kohistan
+pb_attock,Attock,PB,Punjab,ATTOCK,pb_attock
+pb_bahawalnagar,Bahawalnagar,PB,Punjab,BAHAWALNAGAR,pb_bahawalnagar
+pb_bahawalpur,Bahawalpur,PB,Punjab,BAHAWALPUR,pb_bahawalpur
+pb_bhakkar,Bhakkar,PB,Punjab,BHAKKAR,pb_bhakkar
+pb_chakwal,Chakwal,PB,Punjab,CHAKWAL,pb_chakwal
+pb_chiniot,Chiniot,PB,Punjab,CHINIOT,pb_chiniot
+pb_dera_ghazi_khan,Dera Ghazi Khan,PB,Punjab,DERA GHAZI KHAN,pb_dera_ghazi_khan
+pb_faisalabad,Faisalabad,PB,Punjab,FAISALABAD,pb_faisalabad
+pb_gujranwala,Gujranwala,PB,Punjab,GUJRANWALA,pb_gujranwala
+pb_gujrat,Gujrat,PB,Punjab,GUJRAT,pb_gujrat
+pb_hafizabad,Hafizabad,PB,Punjab,HAFIZABAD,pb_hafizabad
+pb_jhang,Jhang,PB,Punjab,JHANG,pb_jhang
+pb_jhelum,Jhelum,PB,Punjab,JHELUM,pb_jhelum
+pb_kasur,Kasur,PB,Punjab,KASUR,pb_kasur
+pb_khanewal,Khanewal,PB,Punjab,KHANEWAL,pb_khanewal
+pb_khushab,Khushab,PB,Punjab,KHUSHAB,pb_khushab
+pb_lahore,Lahore,PB,Punjab,LAHORE,pb_lahore
+pb_layyah,Layyah,PB,Punjab,LAYYAH,pb_layyah
+pb_lodhran,Lodhran,PB,Punjab,LODHRAN,pb_lodhran
+pb_mandi_bahauddin,Mandi Bahauddin,PB,Punjab,MANDI BAHAUDDIN,pb_mandi_bahauddin
+pb_mianwali,Mianwali,PB,Punjab,MIANWALI,pb_mianwali
+pb_multan,Multan,PB,Punjab,MULTAN,pb_multan
+pb_muzaffargarh,Muzaffargarh,PB,Punjab,MUZAFFARGARH,pb_muzaffargarh
+pb_nankana_sahib,Nankana Sahib,PB,Punjab,NANKANA SAHIB,pb_nankana_sahib
+pb_narowal,Narowal,PB,Punjab,NAROWAL,pb_narowal
+pb_okara,Okara,PB,Punjab,OKARA,pb_okara
+pb_pakpattan,Pakpattan,PB,Punjab,PAKPATTAN,pb_pakpattan
+pb_rahim_yar_khan,Rahim Yar Khan,PB,Punjab,RAHIM YAR KHAN,pb_rahim_yar_khan
+pb_rajanpur,Rajanpur,PB,Punjab,RAJANPUR,pb_rajanpur
+pb_rawalpindi,Rawalpindi,PB,Punjab,RAWALPINDI,pb_rawalpindi
+pb_sahiwal,Sahiwal,PB,Punjab,SAHIWAL,pb_sahiwal
+pb_sargodha,Sargodha,PB,Punjab,SARGODHA,pb_sargodha
+pb_sheikhupura,Sheikhupura,PB,Punjab,SHEIKHUPURA,pb_sheikhupura
+pb_sialkot,Sialkot,PB,Punjab,SIALKOT,pb_sialkot
+pb_toba_tek_singh,Toba Tek Singh,PB,Punjab,TOBA TEK SINGH,pb_toba_tek_singh
+pb_vehari,Vehari,PB,Punjab,VEHARI,pb_vehari
+sd_badin,Badin,SD,Sindh,BADIN,sd_badin
+sd_dadu,Dadu,SD,Sindh,DADU,sd_dadu
+sd_ghotki,Ghotki,SD,Sindh,GHOTKI,sd_ghotki
+sd_hyderabad,Hyderabad,SD,Sindh,HYDERABAD,sd_hyderabad
+sd_jacobabad,Jacobabad,SD,Sindh,JACOBABAD,sd_jacobabad
+sd_jamshoro,Jamshoro,SD,Sindh,JAMSHORO,sd_jamshoro
+sd_kambar_shahdad_kot,Kambar Shahdad Kot,SD,Sindh,KAMBAR SHAHDAD KOT,sd_kambar_shahdad_kot
+sd_karachi_central,Karachi Central,SD,Sindh,KARACHI CENTRAL,sd_karachi
+sd_karachi_east,Karachi East,SD,Sindh,KARACHI EAST,sd_karachi
+sd_karachi_south,Karachi South,SD,Sindh,KARACHI SOUTH,sd_karachi
+sd_karachi_west,Karachi West,SD,Sindh,KARACHI WEST,sd_karachi
+sd_kashmore,Kashmore,SD,Sindh,KASHMORE,sd_kashmore
+sd_keamari,Keamari,SD,Sindh,KEAMARI,sd_karachi
+sd_khairpur,Khairpur,SD,Sindh,KHAIRPUR,sd_khairpur
+sd_korangi,Korangi,SD,Sindh,KORANGI,sd_karachi
+sd_larkana,Larkana,SD,Sindh,LARKANA,sd_larkana
+sd_malir,Malir,SD,Sindh,MALIR,sd_karachi
+sd_matiari,Matiari,SD,Sindh,MATIARI,sd_matiari
+sd_mirpur_khas,Mirpur Khas,SD,Sindh,MIRPUR KHAS,sd_mirpur_khas
+sd_naushahro_feroze,Naushahro Feroze,SD,Sindh,NAUSHAHRO FEROZE,sd_naushahro_feroze
+sd_sanghar,Sanghar,SD,Sindh,SANGHAR,sd_sanghar
+sd_shaheed_benazirabad,Shaheed Benazirabad,SD,Sindh,SHAHEED BENAZIRABAD,sd_shaheed_benazirabad
+sd_shikarpur,Shikarpur,SD,Sindh,SHIKARPUR,sd_shikarpur
+sd_sujawal,Sujawal,SD,Sindh,SUJAWAL,sd_sujawal
+sd_sukkur,Sukkur,SD,Sindh,SUKKUR,sd_sukkur
+sd_tando_allahyar,Tando Allahyar,SD,Sindh,TANDO ALLAHYAR,sd_tando_allahyar
+sd_tando_muhammad_khan,Tando Muhammad Khan,SD,Sindh,TANDO MUHAMMAD KHAN,sd_tando_muhammad_khan
+sd_tharparkar,Tharparkar,SD,Sindh,THARPARKAR,sd_tharparkar
+sd_thatta,Thatta,SD,Sindh,THATTA,sd_thatta
+sd_umer_kot,Umer Kot,SD,Sindh,UMER KOT,sd_umer_kot
