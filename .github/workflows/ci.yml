@@ -1,0 +1,33 @@
+name: Build and test
+
+# Rebuilds everything from the pinned sources on every push and pull request,
+# then fails if the data checks fail or the committed outputs are out of date.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build (fetch, census, geometry, checks, export)
+        run: python -m pipeline.run
+
+      - name: Test
+        run: python -m pytest -q
+
+      - name: Committed outputs match a fresh build
+        # Excel files embed a save timestamp, so they are the one output not compared.
+        run: git diff --exit-code -- data/processed site/data crosswalks docs/data_dictionary.md ':(exclude)*.xlsx'
