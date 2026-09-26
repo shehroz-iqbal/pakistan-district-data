@@ -1,0 +1,28 @@
+shape_id,shape_name,district_id,confidence,reason
+9618217B37909865693322,GIRSANI SUB,ba_kohlu,high,Census 2023 lists Grisani sub-tehsil under Kohlu.
+9618217B59230505353758,Loralai,ba_loralai,high,Headquarters tehsil of Loralai; census 2023 splits the district into Bori and Mekhtar.
+9618217B42200782607352,HURAMZAI,ba_pishin,high,Census 2023 lists Hurram Zai sub-division under Pishin.
+9618217B12752349345390,KUT MANDAI,ba_sibi,high,Census 2023 lists Kot Mandai sub-tehsil under Sibi; the older district layer places it in Kohlu.
+9618217B12512882766992,SHEERANI,ba_sherani,high,Sherani became a district (carved from Zhob); census 2023 lists it separately.
+9618217B31254576320005,KHAR,kp_bajaur,high,Census 2023 lists Khar Bajaur tehsil under Bajaur.
+9618217B87633366072343,FR BANNU,kp_bannu,high,"Former Frontier Region Bannu, merged into Bannu as the Wazir sub-division."
+9618217B32901696142370,FR KOHAT,kp_kohat,high,"Former Frontier Region Kohat, merged into Kohat as the Darra Adam Khel sub-division."
+9618217B12477470393515,FR D.I.KHAN,kp_dera_ismail_khan,high,"Former Frontier Region D.I. Khan, merged into D.I. Khan as the Drazanda sub-division."
+9618217B52659197715523,FR LAKKI,kp_lakki_marwat,high,"Former Frontier Region Lakki Marwat, merged into Lakki Marwat as the Bettani sub-division."
+9618217B51909263256707,FR TANK,kp_tank,high,"Former Frontier Region Tank, merged into Tank as the Jandola sub-division."
+9618217B19630672602920,NAURANG,kp_lakki_marwat,high,Census 2023 lists Sarai Naurang tehsil under Lakki Marwat.
+9618217B17002531383252,UPPER ORAKZAI,kp_orakzai,high,Census 2023 lists the Upper tehsil under Orakzai.
+9618217B27486600301498,TORGHER,kp_torghar,high,"Torghar district (Daur Mera, Judba, Khander) was carved from Mansehra; one polygon covers it."
+9618217B64606316264088,MUNDA,kp_lower_dir,high,Munda (Jandool valley) is in Lower Dir; census 2023 reports Lower Dir as four sub-divisions.
+9618217B88301409575294,SAMARBAGH(BARWA),kp_lower_dir,high,Census 2023 lists Samarbagh sub-division under Lower Dir.
+9618217B9124043146420,DE-EXCLUDED AREA RAJANPUR,pb_rajanpur,high,Census 2023 lists the Rajanpur de-excluded (former tribal) area under Rajanpur.
+9618217B32325848684143,TANDO GULAM HYDER,sd_tando_muhammad_khan,high,Census 2023 lists Tando Ghulam Hyder tehsil under Tando Muhammad Khan.
+9618217B33191916593922,MALIR,sd_malir,approximate,Karachi polygons are 2017-era towns; Malir town falls mainly in the 2023 Malir district.
+9618217B3059727908268,MALIR CANTONMENT,sd_malir,approximate,Karachi polygons are 2017-era towns; Malir Cantonment lies in Malir district.
+9618217B80577698749666,KIAMARI TOWN,sd_keamari,approximate,Karachi polygons are 2017-era towns; Kiamari town is the core of Keamari district.
+9618217B84997176527728,MANORA CANTONMENT,sd_keamari,approximate,Karachi polygons are 2017-era towns; Manora lies in Keamari district.
+9618217B15353511562764,CLIFTON CANTONMENT,sd_karachi_south,approximate,Karachi polygons are 2017-era towns; Clifton Cantonment lies in Karachi South.
+9618217B85691850097760,KARACHI CANTONMENT,sd_karachi_south,approximate,Karachi polygons are 2017-era towns; Karachi Cantonment (Saddar) lies in Karachi South.
+9618217B68188288692229,JAMSHED TOWN,sd_karachi_east,approximate,"Karachi polygons are 2017-era towns; Jamshed town became Jamshed Quarters, Karachi East."
+9618217B41060752255967,FAISAL CANTONMENT,sd_korangi,approximate,"Karachi polygons are 2017-era towns; Faisal Cantonment adjoins Shah Faisal, Korangi. Least certain call in the file."
+9618217B10928152590242,KORANGI CREEK CANTONMENT,sd_korangi,approximate,Karachi polygons are 2017-era towns; Korangi Creek Cantonment adjoins Korangi.
