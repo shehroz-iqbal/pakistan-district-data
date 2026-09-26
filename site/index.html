@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pakistan District Data</title>
+  <meta name="description" content="Census 2023 indicators for Pakistan's 136 districts: cleaned, checked against PBS totals, and mapped.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="eyebrow">Census 2023 · 136 districts · 25 mapped indicators</p>
+      <h1>Pakistan district data</h1>
+      <p class="lede">Pakistan's 2023 census for every district: cleaned, checked against PBS's own published totals, and mapped.</p>
+      <p class="meta">
+        <span class="badge" id="qa-badge">Checks loading…</span>
+        <span id="pinned"></span>
+        <a id="repo-link" hidden>Code, data and method on GitHub</a>
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls" aria-label="Choose what to show">
+      <label class="field">
+        <span>Indicator</span>
+        <select id="indicator"></select>
+      </label>
+      <label class="field">
+        <span>Province</span>
+        <select id="province"><option value="">All of Pakistan</option></select>
+      </label>
+      <label class="field grow">
+        <span>Find a district</span>
+        <input id="search" type="search" list="district-list" placeholder="Type a district, e.g. Multan" autocomplete="off">
+        <datalist id="district-list"></datalist>
+      </label>
+    </section>
+
+    <section class="kpis" id="kpis" aria-label="Pakistan and province values for the selected indicator"></section>
+
+    <section class="grid">
+      <figure class="card map-card">
+        <figcaption>
+          <h2 id="map-title">Loading…</h2>
+          <p id="map-sub" class="sub"></p>
+        </figcaption>
+        <div class="map-wrap" id="map-wrap">
+          <svg id="map" role="img" aria-labelledby="map-title map-sub"></svg>
+          <div class="zoom" role="group" aria-label="Map zoom">
+            <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" id="zoom-reset" aria-label="Reset zoom">Reset</button>
+          </div>
+        </div>
+        <div class="legend" id="legend" aria-label="Map legend"></div>
+      </figure>
+
+      <aside class="card profile" id="profile" aria-live="polite"></aside>
+    </section>
+
+    <figure class="card">
+      <figcaption>
+        <h2 id="strip-title">How districts compare within each province</h2>
+        <p class="sub" id="strip-sub"></p>
+      </figcaption>
+      <div id="strip-wrap"><svg id="strip" role="img" aria-labelledby="strip-title strip-sub"></svg></div>
+    </figure>
+
+    <section class="card">
+      <div class="table-head">
+        <div>
+          <h2 id="table-title">All districts</h2>
+          <p class="sub">Click a column to sort, or a row to open that district. This table holds every value on the map.</p>
+        </div>
+        <div class="downloads">
+          <a href="data/downloads/district_indicators.csv" download>Download CSV</a>
+          <a href="data/downloads/pakistan_district_indicators_2023.xlsx" download>Excel workbook</a>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table id="table">
+          <thead><tr>
+            <th scope="col" data-sort="rank" class="num">Rank</th>
+            <th scope="col" data-sort="name">District</th>
+            <th scope="col" data-sort="province">Province</th>
+            <th scope="col" data-sort="population" class="num">Population</th>
+            <th scope="col" data-sort="value" class="num" id="value-col">Value</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="notes" id="notes"></section>
+  </main>
+
+  <div class="tooltip" id="tooltip" role="status" hidden></div>
+
+  <script src="vendor/d3.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

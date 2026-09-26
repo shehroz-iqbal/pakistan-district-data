@@ -1,0 +1,29 @@
+indicator_id,label,theme,unit,decimals,kind,numerator_col,denominator_col,multiplier,direction,source_table,definition
+population,"Population, 2023",Population,people,0,count,pop_total,,1.0,neutral,Table 1,Persons enumerated in the 2023 census (headline count).
+population_2017,"Population, 2017",Population,people,0,count,pop_2017,,1.0,neutral,Table 1,"2017 census population, as re-tabulated by PBS on 2023 district boundaries."
+growth_rate,"Annual population growth, 2017-2023",Population,% per year,2,growth,pop_total,pop_2017,1.0,neutral,Table 1,Compound annual growth between the 2017 and 2023 counts over a six-year interval.
+area,Area,Population,km²,0,count,area_km2,,1.0,neutral,Table 1,Area reported by PBS.
+density,Population density,Population,people per km²,0,ratio,pop_total,area_km2,1.0,neutral,Table 1,Population divided by reported area.
+urban_share,Urban population share,Population,%,1,ratio,pop_urban,pop_total,100.0,neutral,Table 1,Share of the population living in areas PBS classifies as urban.
+sex_ratio,Sex ratio,Population,males per 100 females,1,ratio,pop_male,pop_female,100.0,neutral,Table 1,Males per 100 females.
+household_size,Persons per household,Population,persons,2,ratio,pop_total,households,1.0,neutral,Tables 1 and 22,"Population divided by the number of households in Tables 22-25. PBS publishes 6.33 nationally but does not state its method in these tables, so expect small differences from PBS's figures."
+literacy_rate,Literacy rate (10+),Education,%,1,ratio,literate10_all,pop10_all,100.0,higher_better,Table 12,Literate persons aged 10 and over as a share of all persons aged 10 and over.
+literacy_rate_female,Female literacy rate (10+),Education,%,1,ratio,literate10_female,pop10_female,100.0,higher_better,Table 12,Literate women and girls aged 10 and over as a share of all women and girls aged 10 and over.
+literacy_rate_male,Male literacy rate (10+),Education,%,1,ratio,literate10_male,pop10_male,100.0,higher_better,Table 12,Literate men and boys aged 10 and over as a share of all men and boys aged 10 and over.
+literacy_gender_gap,Literacy gender gap,Education,percentage points,1,difference,,,1.0,lower_better,Table 12,Male minus female literacy rate (10+). Positive means men are ahead.
+out_of_school_rate,Out-of-school children (5-16),Education,%,1,ratio,oosc_all,pop5_16_all,100.0,lower_better,Tables 12 and 13b,"Children aged 5-16 who never attended school or dropped out, as a share of all children aged 5-16."
+out_of_school_rate_female,Out-of-school girls (5-16),Education,%,1,ratio,oosc_female,pop5_16_female,100.0,lower_better,Tables 12 and 13b,"Girls aged 5-16 who never attended school or dropped out, as a share of all girls aged 5-16."
+out_of_school_rate_male,Out-of-school boys (5-16),Education,%,1,ratio,oosc_male,pop5_16_male,100.0,lower_better,Tables 12 and 13b,"Boys aged 5-16 who never attended school or dropped out, as a share of all boys aged 5-16."
+disability_rate,Persons with a disability,Population,%,1,ratio,disability_all,pop_t16_all,100.0,neutral,Table 16,Persons reported with a disability as a share of the population covered by Table 16.
+electricity_lighting,Households lit by grid electricity,Housing and services,% of households,1,ratio,hh_light_electric,households,100.0,higher_better,Table 22,Households whose main source of lighting is electricity.
+solar_lighting,Households lit by solar,Housing and services,% of households,1,ratio,hh_light_solar,households,100.0,neutral,Table 22,Households whose main source of lighting is solar.
+gas_cooking,Households cooking with piped gas,Housing and services,% of households,1,ratio,hh_fuel_gas,households,100.0,neutral,Table 22,Households whose main cooking fuel is natural gas.
+firewood_cooking,Households cooking with firewood,Housing and services,% of households,1,ratio,hh_fuel_firewood,households,100.0,lower_better,Table 22,Households whose main cooking fuel is firewood.
+improved_water,Improved drinking water,Housing and services,% of households,1,ratio,hh_water_improved,households,100.0,higher_better,Table 23,Households whose main drinking-water source PBS classifies as improved.
+water_on_premises,Drinking water on premises,Housing and services,% of households,1,ratio,hh_water_inside,households,100.0,higher_better,Table 23,Households whose drinking-water source is inside the dwelling or compound.
+flush_toilet,Households with a flush toilet,Housing and services,% of households,1,ratio,hh_toilet_flush,households,100.0,higher_better,Table 24,Households with a flush toilet.
+no_toilet,Households with no toilet,Housing and services,% of households,1,ratio,hh_toilet_none,households,100.0,lower_better,Table 24,Households with no toilet facility.
+pakka_housing,Pakka (permanent) housing,Housing and services,% of households,1,ratio,hh_pakka,households_t20,100.0,higher_better,Table 20,Households living in pakka (fired brick or concrete) structures.
+rented_housing,Households renting,Housing and services,% of households,1,ratio,hh_rented,households,100.0,neutral,Table 25,Households living in a rented dwelling.
+one_room_housing,Households in one room,Housing and services,% of households,1,ratio,hh_one_room,households,100.0,lower_better,Table 25,Households living in a dwelling with a single room.
+female_owned_housing,Dwellings owned by women,Housing and services,% of private dwellings,1,ratio,owner_female,owner_any,100.0,higher_better,Table 25,"Share of privately held dwellings (owner-occupied, rented or rent-free) whose owner is a woman. Table 25 reports owner's sex for exactly these three tenure types."
