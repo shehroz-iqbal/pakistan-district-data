@@ -1,0 +1,32 @@
+# Headline figures published by PBS, used to test that the pipeline reproduces
+# the official numbers from district-level data. If a fix or join goes wrong,
+# these stop matching.
+#
+# Source: PBS, "7th Population & Housing Census 2023: National Census Report",
+#   Executive Summary (p. 3) and "Digital Census 2023 at a Glance" (p. 7).
+#   https://www.pbs.gov.pk/wp-content/uploads/2020/07/National-Census-Report-2023.pdf
+# Tolerance is half a unit of the last printed digit unless noted.
+
+national:
+  population_millions: 241.49
+  population_2017_millions: 207.68
+  growth_rate: 2.55
+  urban_population_millions: 93.88
+  urban_share: 38.88
+  sex_ratio: 106.12
+  density: 303.35
+  literacy_rate: 60.65
+  literacy_rate_male: 68.00
+  literacy_rate_female: 52.84
+  out_of_school_rate: 35.60
+  out_of_school_rate_male: 32.44
+  out_of_school_rate_female: 38.99
+  households_millions: 38.32      # Tables 22-25 sum to 38.29m; see docs/methodology.md
+  household_size: 6.33            # method not stated by PBS; ours is 6.31 (see QA.md)
+
+province_population_millions:
+  PB: 127.69
+  SD: 55.70
+  KP: 40.86
+  BA: 14.89
+  IS: 2.36
