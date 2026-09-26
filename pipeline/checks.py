@@ -59,34 +59,42 @@ def province_reconciliation(con) -> list[Check]:
 
 
 def national_headlines(con) -> list[Check]:
-    ref = load_yaml("reference_figures.yml")
+    ref = load_yaml("reference_figures.yml")["national"]
     nat = dict(con.execute("SELECT indicator_id, value FROM indicator_values WHERE level='national'").fetchall())
     num = dict(con.execute("SELECT indicator_id, numerator FROM indicator_values WHERE level='national'").fetchall())
-    pairs = [
-        # PBS prints millions to two decimals, sometimes truncated (241,499,431 -> 241.49),
-        # so counts in millions get a tolerance of one unit in the last digit.
-        ("Population (millions)", nat["population"] / 1e6, ref["national"]["population_millions"], 0.01),
-        ("Population 2017 (millions)", nat["population_2017"] / 1e6, ref["national"]["population_2017_millions"], 0.01),
-        ("Annual growth 2017-23 (%)", nat["growth_rate"], ref["national"]["growth_rate"], 0.005),
-        ("Urban population (millions)", num["urban_share"] / 1e6, ref["national"]["urban_population_millions"], 0.01),
-        ("Urban share (%)", nat["urban_share"], ref["national"]["urban_share"], 0.005),
-        ("Sex ratio", nat["sex_ratio"], ref["national"]["sex_ratio"], 0.005),
-        ("Density (per km2)", nat["density"], ref["national"]["density"], 0.005),
-        ("Literacy rate 10+ (%)", nat["literacy_rate"], ref["national"]["literacy_rate"], 0.005),
-        ("Male literacy (%)", nat["literacy_rate_male"], ref["national"]["literacy_rate_male"], 0.005),
-        ("Female literacy (%)", nat["literacy_rate_female"], ref["national"]["literacy_rate_female"], 0.005),
-        ("Out of school 5-16 (%)", nat["out_of_school_rate"], ref["national"]["out_of_school_rate"], 0.005),
-        ("Out of school 5-16, boys (%)", nat["out_of_school_rate_male"], ref["national"]["out_of_school_rate_male"], 0.005),
-        ("Out of school 5-16, girls (%)", nat["out_of_school_rate_female"], ref["national"]["out_of_school_rate_female"], 0.005),
-    ]
-    out = [
-        Check("reconciliation", f"Reproduces PBS national figure: {label}",
-              abs(ours - theirs) <= tol, f"ours {ours:,.3f} vs PBS {theirs:,.2f}")
-        for label, ours, theirs, tol in pairs
-    ]
+    ours = {
+        **{k: nat[k] for k in ("growth_rate", "urban_share", "sex_ratio", "density", "literacy_rate",
+                               "literacy_rate_male", "literacy_rate_female", "out_of_school_rate",
+                               "out_of_school_rate_male", "out_of_school_rate_female")},
+        "population_millions": nat["population"] / 1e6,
+        "population_2017_millions": nat["population_2017"] / 1e6,
+        "urban_population_millions": num["urban_share"] / 1e6,
+    }
+    # PBS prints millions to two decimals, sometimes truncated (241,499,431 -> 241.49),
+    # so counts in millions get a tolerance of one unit in the last digit.
+    labels = {
+        "population_millions": "Population (millions)",
+        "population_2017_millions": "Population 2017 (millions)",
+        "growth_rate": "Annual growth 2017-23 (%)",
+        "urban_population_millions": "Urban population (millions)",
+        "urban_share": "Urban share (%)",
+        "sex_ratio": "Sex ratio",
+        "density": "Density (per km2)",
+        "literacy_rate": "Literacy rate 10+ (%)",
+        "literacy_rate_male": "Male literacy (%)",
+        "literacy_rate_female": "Female literacy (%)",
+        "out_of_school_rate": "Out of school 5-16 (%)",
+        "out_of_school_rate_male": "Out of school 5-16, boys (%)",
+        "out_of_school_rate_female": "Out of school 5-16, girls (%)",
+    }
+    out = []
+    for key, label in labels.items():
+        tol = 0.01 if key.endswith("_millions") else 0.005
+        out.append(Check("reconciliation", f"Reproduces PBS national figure: {label}",
+                         abs(ours[key] - ref[key]) <= tol, f"ours {ours[key]:,.3f} vs PBS {ref[key]:,.2f}"))
     prov = dict(con.execute("SELECT geo_id, value FROM indicator_values "
                             "WHERE level='province' AND indicator_id='population'").fetchall())
-    for code, millions in ref["province_population_millions"].items():
+    for code, millions in load_yaml("reference_figures.yml")["province_population_millions"].items():
         ours = prov[code] / 1e6
         out.append(Check("reconciliation", f"Reproduces PBS province population: {code}",
                          abs(ours - millions) <= 0.01, f"ours {ours:.3f}m vs PBS {millions:.2f}m"))

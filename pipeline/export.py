@@ -122,7 +122,7 @@ def write_site_data(f: dict[str, pd.DataFrame], con) -> None:
     """One JSON file with everything the dashboard needs, rounded for display."""
     SITE_DATA.mkdir(parents=True, exist_ok=True)
     catalog = f["catalog"]
-    decimals = dict(zip(catalog["indicator_id"], catalog["decimals"]))
+    decimals = dict(zip(catalog["indicator_id"], catalog["decimals"], strict=True))
     long = f["long"]
 
     places: dict[str, dict] = {}

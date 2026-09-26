@@ -15,7 +15,7 @@ import json
 import sys
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from .common import CONFIG, RAW, load_yaml
 
@@ -99,7 +99,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.lock:
         payload = {
-            "_generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "_generated": datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
             **dict(sorted(new_lock.items())),
         }
         LOCK_PATH.write_text(json.dumps(payload, indent=2) + "\n")

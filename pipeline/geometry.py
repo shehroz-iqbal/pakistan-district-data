@@ -104,7 +104,7 @@ def compact(key: str) -> str:
 def assign(tehsils: list[dict], units: pd.DataFrame, overrides: dict[str, dict]) -> pd.DataFrame:
     """Decide which 2023 district each tehsil polygon belongs to."""
     districts_by_key: dict[str, set[str]] = defaultdict(set)
-    for name, district in zip(units["unit_name"], units["district_id"]):
+    for name, district in zip(units["unit_name"], units["district_id"], strict=True):
         districts_by_key[compact(match_key(name))].add(district)
     all_keys = list(districts_by_key)
 
@@ -203,7 +203,7 @@ def build() -> int:
         return 1
 
     # Dissolve tehsils into map units (a district, or a group such as Karachi).
-    to_unit = dict(zip(dims["district_id"], dims["map_unit_id"]))
+    to_unit = dict(zip(dims["district_id"], dims["map_unit_id"], strict=True))
     to_unit.update({"ajk": "ajk", "gb": "gb"})
     table["map_unit_id"] = table["district_id"].map(to_unit)
     geom_by_id = {t["shapeID"]: t["geometry"] for t in tehsils}
@@ -214,7 +214,7 @@ def build() -> int:
     # Area check: mapped (geodesic) area against the area PBS reports.
     members = dims.groupby("map_unit_id")["district_id"].apply(list)
     checks = []
-    for i, geom in zip(ids, dissolved):
+    for i, geom in zip(ids, dissolved, strict=True):
         if i in ("ajk", "gb"):
             continue
         reported = sum(census_area[d] for d in members[i])
@@ -237,7 +237,7 @@ def build() -> int:
 
     meta = dims.drop_duplicates("map_unit_id").set_index("map_unit_id")
     features = []
-    for i, geom in zip(ids, simplified):
+    for i, geom in zip(ids, simplified, strict=True):
         if i in ("ajk", "gb"):
             props = {"map_unit_id": i, "name": OUTSIDE_NAMES[i], "province_code": None,
                      "district_ids": [], "in_census_tables": False}
@@ -254,9 +254,9 @@ def build() -> int:
     # Province outlines for the map, dissolved from the simplified shapes so they
     # line up exactly with the district borders.
     province_of = {i: (meta.at[i, "province_code"] if i in meta.index else i) for i in ids}
-    province_names = dict(zip(dims["province_code"], dims["province_name"])) | OUTSIDE_NAMES
+    province_names = dict(zip(dims["province_code"], dims["province_name"], strict=True)) | OUTSIDE_NAMES
     by_province: dict[str, list] = defaultdict(list)
-    for i, geom in zip(ids, simplified):
+    for i, geom in zip(ids, simplified, strict=True):
         by_province[province_of[i]].append(geom)
     province_features = [
         {"type": "Feature",
